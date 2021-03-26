@@ -1,0 +1,60 @@
+.doodle-controller {
+  border: 2px solid #dcdcdc;
+  outline: none;
+  padding: 12px;
+  border-radius: 6px;
+  position: absolute;
+  top: 516px;
+  right: 12vh;
+  width: 370px;
+  margin-bottom: 16px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.color-options {
+  width: 60px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 18px 18px;
+  grid-row: auto auto;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  border-radius: 4px;
+  padding: 6px;
+  margin-bottom: -7px;
+
+  .color-select {
+    padding: 9px;
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+
+    &.active {
+      box-shadow: 0 0 0 3px #dcdcdc;
+    }
+  }
+}
+
+.black {
+  background: #212121;
+}
+
+.red {
+  background: #ff555f;
+}
+
+.blue {
+  background: #3494ff;
+}
+
+.yellow {
+  background: #ffc93b;
+}

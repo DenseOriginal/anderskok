@@ -23,6 +23,14 @@
   overflow-x: hidden;
 }
 
+.description {
+  width: 365px;
+  position: absolute;
+  bottom: 8vh;
+  left: 8vh;
+  text-align: center;
+}
+
 .mobile-container {
   position: absolute;
   overflow-y: auto;

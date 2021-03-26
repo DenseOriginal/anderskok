@@ -1,4 +1,7 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { pluck, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(['(max-width: 750px)'])
+    .pipe(pluck('matches'), shareReplay());
+
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
   }
