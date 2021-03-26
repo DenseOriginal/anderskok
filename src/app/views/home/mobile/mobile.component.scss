@@ -1,0 +1,47 @@
+
+
+.item {
+  margin-bottom: 24px;
+}
+
+.frame {
+  padding: 12px;
+  border: 2px solid #dcdcdc;
+  border-radius: 6px;
+
+  .hero {
+    width: calc(100% + 28px);
+    height: 100px;
+    margin: -14px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .signature {
+    width: 116px;
+    margin-top: 10px;
+  }
+
+  .headshot {
+    width: 98px;
+    height: 98px;
+    margin-bottom: 14px;
+    margin-top: -58px;
+    border: 4px solid #fff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 94px;
+      height: 94px;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+}
