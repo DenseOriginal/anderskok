@@ -1,6 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  line-height: 22px;
+  font-family: GothamRounded;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ebebeb;
+  border: 0 #fff;
+  border-radius: 39px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #8a8a8a;
+  border: 0 #fff;
+  border-radius: 50px;
+}
+
+// Text stuff
+@font-face {
+  font-family: GothamRounded;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/GothamRounded-Medium.otf");
+}
+@font-face {
+  font-family: GothamRounded;
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/GothamRounded-Bold.otf");
+}
+@font-face {
+  font-family: GothamRounded;
+  font-style: italic;
+  font-weight: 600;
+  src: url("/assets/GothamRounded-BoldItalic.otf");
+}
+@font-face {
+  font-family: GothamRounded;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/GothamRounded-Book.otf");
+}
+
+.body {
+  font-family: GothamRounded;
+  font-size: 16px;
+  font-weight: 500;
+  color: #8a8a8a;
+}
+
+.heading {
+  font-family: GothamRounded;
+  font-weight: 600;
+  color: #484848;
+  font-size: 18px;
+  margin-bottom: 16px;
 }
