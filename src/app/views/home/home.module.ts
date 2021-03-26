@@ -7,6 +7,9 @@ import { NgWhiteboardModule } from 'ng-whiteboard';
 import { MobileComponent } from './mobile/mobile.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DoodleControllerComponent } from './doodle-controller/doodle-controller.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { DoodleControllerComponent } from './doodle-controller/doodle-controller
     CommonModule,
     HomeRoutingModule,
     NgWhiteboardModule,
-    LayoutModule
+    LayoutModule,
+    MatTooltipModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class HomeModule { }

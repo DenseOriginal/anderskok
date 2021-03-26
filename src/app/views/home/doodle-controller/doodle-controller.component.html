@@ -1,13 +1,17 @@
 <div class="doodle-controller">
   <h1 class="heading">Draw a thing or two!</h1>
   <div class="controls">
-    <div class="left">undo</div>
+    <div class="left">
+      <button class="undo-button" matTooltipShowDelay="200" matTooltip="Undo last stroke">
+        <img src="https://simonkomlos.com/assets/controller/undo.svg" alt="undo">
+      </button>
+    </div>
     <div class="right">
       <div class="color-options">
-        <div class="color-select black active"></div>
-        <div class="color-select red"></div>
-        <div class="color-select blue"></div>
-        <div class="color-select yellow"></div>
+        <div matTooltipShowDelay="200" matTooltip="Change color to black" class="color-select black active"></div>
+        <div matTooltipShowDelay="200" matTooltip="Change color to red" class="color-select red"></div>
+        <div matTooltipShowDelay="200" matTooltip="Change color to blue" class="color-select blue"></div>
+        <div matTooltipShowDelay="200" matTooltip="Change color to yellow" class="color-select yellow"></div>
       </div>
     </div>
   </div>

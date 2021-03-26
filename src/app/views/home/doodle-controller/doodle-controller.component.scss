@@ -43,6 +43,38 @@
   }
 }
 
+.undo-button {
+  font-family: GothamRounded, Arial;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  color: #298eff;
+  background: #fff;
+  border-radius: 6px;
+  border: solid #dcdcdc;
+  border-width: 2px 2px 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: 0.15s ease-in-out;
+  position: relative;
+  padding: 8px;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  text-align: center;
+
+  &:active {
+    background: #f6f6f6;
+    border-bottom: 2px solid #dcdcdc;
+    border-radius: 6px;
+    margin-bottom: 2px;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+}
+
 .black {
   background: #212121;
 }
