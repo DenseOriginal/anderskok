@@ -11,7 +11,7 @@ import { pluck, shareReplay } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(['(max-width: 750px)'])
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(['(max-width: 930px)'])
     .pipe(pluck('matches'), shareReplay());
 
   color: string = "#212121";
