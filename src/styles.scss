@@ -82,7 +82,14 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-#draw-frame .line {
-  mix-blend-mode: multiply;
-  opacity: 0.98;
+#draw-frame {
+  .line {
+    mix-blend-mode: multiply;
+    opacity: 0.98;
+  
+  }
+
+  svg {
+    cursor: url("/assets/icons/cursor.svg") 5 5,crosshair !important;
+  }
 }
