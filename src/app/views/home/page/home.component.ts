@@ -1,5 +1,6 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { NgWhiteboardService } from 'ng-whiteboard';
 import { Observable } from 'rxjs';
 import { pluck, shareReplay } from 'rxjs/operators';
 
@@ -13,9 +14,18 @@ export class HomeComponent implements OnInit {
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(['(max-width: 750px)'])
     .pipe(pluck('matches'), shareReplay());
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  color: string = "#212121";
+
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private whiteboardService: NgWhiteboardService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  undo() {
+    this.whiteboardService.undo();
   }
 
 }

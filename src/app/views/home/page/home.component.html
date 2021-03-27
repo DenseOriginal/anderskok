@@ -1,4 +1,4 @@
-<ng-whiteboard size="10px" class="whiteboard"></ng-whiteboard>
+<ng-whiteboard size="10px" class="whiteboard" [color]="color"></ng-whiteboard>
 
 <div *ngIf="isHandset$ | async; then mobile; else desktop"></div>
 
@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <doodle-controller></doodle-controller>
+  <doodle-controller (undo)="undo()" [(color)]="color"></doodle-controller>
 </ng-template>
 
 <ng-template #mobile>

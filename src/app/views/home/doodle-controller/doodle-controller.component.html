@@ -2,16 +2,48 @@
   <h1 class="heading">Draw a thing or two!</h1>
   <div class="controls">
     <div class="left">
-      <button class="btn-alt icon-only" matTooltipShowDelay="200" matTooltip="Undo last stroke">
-        <img src="https://simonkomlos.com/assets/controller/undo.svg" alt="undo">
+      <button
+        class="btn-alt icon-only"
+        matTooltipShowDelay="200"
+        matTooltip="Undo last stroke"
+        (click)="undo.emit(true)"
+      >
+        <img
+          src="https://simonkomlos.com/assets/controller/undo.svg"
+          alt="undo"
+        />
       </button>
     </div>
     <div class="right">
       <div class="color-options">
-        <div matTooltipShowDelay="200" matTooltip="Change color to black" class="color-select black active"></div>
-        <div matTooltipShowDelay="200" matTooltip="Change color to red" class="color-select red"></div>
-        <div matTooltipShowDelay="200" matTooltip="Change color to blue" class="color-select blue"></div>
-        <div matTooltipShowDelay="200" matTooltip="Change color to yellow" class="color-select yellow"></div>
+        <div
+          [class.active]="color == '#212121'"
+          matTooltipShowDelay="200"
+          matTooltip="Change color to #212121"
+          class="color-select black"
+          (click)="colorChange.emit('#212121')"
+        ></div>
+        <div
+          [class.active]="color == '#FF555F'"
+          matTooltipShowDelay="200"
+          matTooltip="Change color to #FF555F"
+          class="color-select red"
+          (click)="colorChange.emit('#FF555F')"
+        ></div>
+        <div
+          [class.active]="color == '#3494FF'"
+          matTooltipShowDelay="200"
+          matTooltip="Change color to #3494FF"
+          class="color-select blue"
+          (click)="colorChange.emit('#3494FF')"
+        ></div>
+        <div
+          [class.active]="color == '#FFC93B'"
+          matTooltipShowDelay="200"
+          matTooltip="Change color to #FFC93B"
+          class="color-select yellow"
+          (click)="colorChange.emit('#FFC93B')"
+        ></div>
       </div>
     </div>
   </div>

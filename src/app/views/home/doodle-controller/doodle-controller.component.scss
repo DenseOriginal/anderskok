@@ -37,6 +37,8 @@
     align-items: center;
     justify-content: center;
     font-size: 40px;
+    box-shadow: 0 0 0 0 #dcdcdc;
+    transition: box-shadow 200ms ease;
 
     &.active {
       box-shadow: 0 0 0 3px #dcdcdc;
