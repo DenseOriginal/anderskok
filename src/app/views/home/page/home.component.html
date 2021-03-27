@@ -1,4 +1,9 @@
-<ng-whiteboard size="10px" class="whiteboard" [color]="color"></ng-whiteboard>
+<ng-whiteboard
+  size="10px"
+  class="whiteboard"
+  [color]="color"
+  id="draw-frame"
+></ng-whiteboard>
 
 <div *ngIf="isHandset$ | async; then mobile; else desktop"></div>
 

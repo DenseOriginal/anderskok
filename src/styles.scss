@@ -81,3 +81,8 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+#draw-frame .line {
+  mix-blend-mode: multiply;
+  opacity: 0.98;
+}
