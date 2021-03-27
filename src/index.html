@@ -15,6 +15,14 @@
   <link rel="preload" href="/assets/fonts/GothamRounded-Book.otf" as="font" type="font/otf"> -->
 </head>
 <body>
-  <app-root>Loading</app-root>
+  <app-root><p id="loading"></p></app-root>
+  <script>
+    // Display loading text if it takes more than 2 seconds to load
+    setTimeout(() => {
+      try {
+        document.getElementById('loading').innerHTML = "Loading"
+      } catch (e) { }
+    }, 2000);
+  </script>
 </body>
 </html>
