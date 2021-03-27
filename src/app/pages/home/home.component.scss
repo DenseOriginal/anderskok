@@ -6,28 +6,30 @@
 
 .phone-frame {
   display: block;
+  position: absolute;
+  top: 6vh;
+  left: 64px;
+  height: calc(100% - 20vh);
 }
 
 .phone-item {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
   background: #fff;
   border: 2px solid #dcdcdc;
   box-shadow: 0 0 60px rgb(0 0 0 / 12%);
   border-radius: 8px;
   width: 365px;
-  height: calc(100% - 20vh);
-  position: absolute;
-  top: 6vh;
-  left: 8vh;
   cursor: auto;
-  overflow: scroll;
-  overflow-x: hidden;
 }
 
 .description {
   width: 365px;
-  position: absolute;
-  bottom: 8vh;
-  left: 8vh;
+  // position: absolute;
+  // bottom: 8vh;
+  // left: 64px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -67,10 +69,11 @@ app-mobile {
   padding: 12px;
   border-radius: 6px;
   position: absolute;
-  top: 516px;
-  right: 12vh;
+  // top: 516px;
+  bottom: 14vh;
+  right: 90px;
   width: 370px;
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
   background-color: white;
 }
 
