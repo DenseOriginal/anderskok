@@ -65,6 +65,24 @@ html {
   color: #8a8a8a;
 }
 
+.small,
+small {
+  font-family: GothamRounded;
+  font-size: 14px;
+  font-weight: 500;
+  color: #8a8a8a;
+}
+
+a {
+  text-decoration: none;
+  color: #298EFF;
+
+  &:hover {
+    color: #056bdf;
+    cursor: pointer;
+  }
+}
+
 .heading {
   font-family: GothamRounded;
   font-weight: 600;
