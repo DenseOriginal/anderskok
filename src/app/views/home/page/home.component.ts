@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
     .pipe(pluck('matches'), shareReplay());
 
   color: string = "#212121";
+  isDrawing = false;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.isHandset$.subscribe(isHandset => { this.isDrawing = !isHandset });
   }
 
   undo() {

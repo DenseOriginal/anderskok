@@ -4,6 +4,7 @@
   class="whiteboard"
   [color]="color"
   id="draw-frame"
+  [class.hidden]="!isDrawing"
 ></ng-whiteboard>
 
 <div *ngIf="isHandset$ | async; then mobile; else desktop"></div>
@@ -25,11 +26,41 @@
 </ng-template>
 
 <ng-template #mobile>
-  <div class="mobile-container">
-    <app-mobile></app-mobile>
-    <div class="mobile-doodle-controller">
-      <ng-container *ngTemplateOutlet="doodleController"></ng-container>
+  <div class="mobile-container" [class.drawing]="isDrawing">
+    <app-mobile *ngIf="!isDrawing"></app-mobile>
+
+    <div class="footer" *ngIf="!isDrawing">
+      <button class="doodle-mode btn-standard" (click)="isDrawing = !isDrawing">
+        Enter doodle mode
+      </button>
     </div>
+  </div>
+
+  <button
+    class="btn-pill back-btn"
+    *ngIf="isDrawing"
+    (click)="isDrawing = false"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#DCDCDC"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-arrow-left"
+    >
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    <div class="image"><img src="/assets/profile.jpg" alt="Anders Kok" /></div>
+  </button>
+
+  <div class="mobile-doodle-controller" *ngIf="isDrawing">
+    <ng-container *ngTemplateOutlet="doodleController"></ng-container>
   </div>
 </ng-template>
 
