@@ -12,7 +12,7 @@ html {
   height: 100%;
   width: 100%;
   line-height: 22px;
-  font-family: GothamRounded;
+  font-family: var(--default-font);
 }
 
 *::-webkit-scrollbar {
@@ -33,33 +33,41 @@ html {
 }
 
 // Text stuff
+:root {
+  --default-font: GothamRounded, Helvetica
+}
+
 @font-face {
   font-family: GothamRounded;
   font-style: normal;
   font-weight: 500;
   src: url("/assets/fonts/GothamRounded-Medium.otf");
+  font-display: swap;
 }
 @font-face {
   font-family: GothamRounded;
   font-style: normal;
   font-weight: 600;
   src: url("/assets/fonts/GothamRounded-Bold.otf");
+  font-display: swap;
 }
 @font-face {
   font-family: GothamRounded;
   font-style: italic;
   font-weight: 600;
   src: url("/assets/fonts/GothamRounded-MediumItalic.otf");
+  font-display: swap;
 }
 @font-face {
   font-family: GothamRounded;
   font-style: normal;
   font-weight: 400;
   src: url("/assets/fonts/GothamRounded-Book.otf");
+  font-display: swap;
 }
 
 .body {
-  font-family: GothamRounded;
+  font-family: var(--default-font);
   font-size: 16px;
   font-weight: 500;
   color: #8a8a8a;
@@ -67,7 +75,7 @@ html {
 
 .small,
 small {
-  font-family: GothamRounded;
+  font-family: var(--default-font);
   font-size: 14px;
   font-weight: 500;
   color: #8a8a8a;
@@ -84,7 +92,7 @@ a {
 }
 
 .heading {
-  font-family: GothamRounded;
+  font-family: var(--default-font);
   font-weight: 600;
   color: #484848;
   font-size: 18px;
