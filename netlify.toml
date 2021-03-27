@@ -1,0 +1,9 @@
+[build]
+    base = "/"
+    publish = "dist/anderskok"
+    command = "ng build"
+
+[context.production]
+    base = "/"
+    publish = "dist/anderskok"
+    command = "ng build --prod"
