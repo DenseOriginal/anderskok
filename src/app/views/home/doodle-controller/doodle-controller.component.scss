@@ -1,14 +1,6 @@
 .doodle-controller {
-  border: 2px solid #dcdcdc;
-  outline: none;
-  padding: 12px;
-  border-radius: 6px;
-  position: absolute;
-  top: 516px;
-  right: 12vh;
-  width: 370px;
-  margin-bottom: 16px;
   background-color: white;
+  width: 100%;
 }
 
 .controls {
@@ -18,7 +10,7 @@
 }
 
 .color-options {
-  width: 60px;
+  width: 100%;
   background-color: #fff;
   display: grid;
   grid-template-columns: 18px 18px;

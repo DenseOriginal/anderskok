@@ -1,9 +1,14 @@
 .container {
   padding: 20px;
+  background-color: white;
 }
 
 .item {
   margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .frame {

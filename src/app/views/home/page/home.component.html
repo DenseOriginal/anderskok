@@ -18,11 +18,21 @@
     </div>
   </div>
 
-  <doodle-controller (undo)="undo()" [(color)]="color"></doodle-controller>
+  <div class="floating-doodle-controller">
+    <h1 class="heading">Draw a thing or two!</h1>
+    <ng-container *ngTemplateOutlet="doodleController"></ng-container>
+  </div>
 </ng-template>
 
 <ng-template #mobile>
   <div class="mobile-container">
     <app-mobile></app-mobile>
+    <div class="mobile-doodle-controller">
+      <ng-container *ngTemplateOutlet="doodleController"></ng-container>
+    </div>
   </div>
+</ng-template>
+
+<ng-template #doodleController>
+  <doodle-controller (undo)="undo()" [(color)]="color"></doodle-controller>
 </ng-template>
