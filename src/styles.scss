@@ -7,14 +7,6 @@
   box-sizing: border-box;
 }
 
-body,
-html {
-  height: 100%;
-  width: 100%;
-  line-height: 22px;
-  font-family: var(--default-font);
-}
-
 *::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -108,18 +100,17 @@ body {
   height: 100%;
 }
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 22px;
+  font-family: var(--default-font);
 }
 
 #draw-frame {
   .line {
     mix-blend-mode: multiply;
     opacity: 0.98;
-  
   }
 
   svg {
-    cursor: url("/assets/icons/cursor.svg") 5 5,crosshair !important;
+    cursor: url("/assets/icons/cursor.svg") 5 5, crosshair !important;
   }
 }
