@@ -34,7 +34,11 @@ html {
 
 // Text stuff
 :root {
-  --default-font: GothamRounded, Helvetica
+  --text-default: #747474;
+  --text-dark: #484848;
+  --blue: #0a6ee0;
+  --blue-dark: #035cc2;
+  --default-font: GothamRounded, Helvetica;
 }
 
 @font-face {
@@ -70,7 +74,7 @@ html {
   font-family: var(--default-font);
   font-size: 16px;
   font-weight: 500;
-  color: #8a8a8a;
+  color: var(--text-default);
 }
 
 .small,
@@ -78,15 +82,15 @@ small {
   font-family: var(--default-font);
   font-size: 14px;
   font-weight: 500;
-  color: #8a8a8a;
+  color: var(--text-default);
 }
 
 a {
   text-decoration: none;
-  color: #298EFF;
+  color: var(--blue);
 
   &:hover {
-    color: #056bdf;
+    color: var(--blue-dark);
     cursor: pointer;
   }
 }
@@ -94,7 +98,7 @@ a {
 .heading {
   font-family: var(--default-font);
   font-weight: 600;
-  color: #484848;
+  color: var(--text-dark);
   font-size: 18px;
   margin-bottom: 16px;
 }

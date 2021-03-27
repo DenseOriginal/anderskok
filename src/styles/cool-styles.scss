@@ -3,7 +3,7 @@
   display: inline-block;
   font-weight: 700;
   font-size: 16px;
-  color: #298eff;
+  color: var(--blue);
   background: #fff;
   border-radius: 6px;
   border: solid #dcdcdc;
@@ -32,10 +32,10 @@
   font-weight: 700;
   font-size: 16px;
   color: #fff;
-  background: #298eff;
+  background: var(--blue);
   border-radius: 6px;
-  border: 2px solid #298eff;
-  border-bottom: 4px solid #097dff;
+  border: 2px solid var(--blue);
+  border-bottom: 4px solid var(--blue-dark);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: 0.15s ease-in-out;
@@ -47,8 +47,8 @@
   text-align: center;
 
   &:active {
-    background: #298eff;
-    border-bottom: 2px solid #298eff;
+    background: var(--blue);
+    border-bottom: 2px solid var(--blue);
     border-radius: 6px;
     margin-top: 2px;
   }
