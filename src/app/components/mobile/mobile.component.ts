@@ -12,6 +12,7 @@ interface Skill {
 })
 export class MobileComponent implements OnInit {
 
+  copyrightYear = new Date().getFullYear();
   skills: Skill[] = [
     {
       imgUrl: "https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_js_official.svg",
