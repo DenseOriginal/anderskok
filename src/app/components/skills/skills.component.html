@@ -1,0 +1,16 @@
+<div class="skills">
+  <div class="frame">
+    <div class="skill-container">
+      <div class="skill" *ngFor="let skill of skills">
+        <img
+          class="logo"
+          width="50px"
+          height="50px"
+          [src]="skill.imgUrl"
+          [alt]="skill.name"
+        />
+        <small>{{ skill.name }}</small>
+      </div>
+    </div>
+  </div>
+</div>
