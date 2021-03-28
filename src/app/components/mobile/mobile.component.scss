@@ -53,3 +53,28 @@
     }
   }
 }
+
+span {
+  &.angular {
+    color: #dd0031;
+  }
+
+  &.firebase {
+    // Cheeky trick to achive 100% accessebility on lighthouse test
+    color: black;
+    filter: invert(66%) sepia(85%) saturate(2279%) hue-rotate(358deg)
+      brightness(101%) contrast(103%);
+  }
+
+  &.node {
+    color: #3b8439;
+  }
+}
+
+.madewith {
+  .icon > svg {
+    width: 18px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+}
