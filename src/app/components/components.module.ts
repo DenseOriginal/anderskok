@@ -4,12 +4,14 @@ import { DoodleControllerComponent } from "./doodle-controller/doodle-controller
 import { MobileComponent } from "./mobile/mobile.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SkillsComponent } from './skills/skills.component';
+import { DoodleSubmitComponent } from './doodle-submit/doodle-submit.component';
 
 @NgModule({
   declarations: [
       DoodleControllerComponent,
       MobileComponent,
-      SkillsComponent
+      SkillsComponent,
+      DoodleSubmitComponent
   ],
   imports: [
     BrowserModule,
