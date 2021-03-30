@@ -1,1 +1,23 @@
-<p>doodle-submit works!</p>
+<div class="container">
+  <header class="border">
+    <h1 class="heading">Send me your doodle</h1>
+    <p class="body">I love seeing people's doodles!</p>
+    <button class="close" aria-label="Close">
+      <span class="body noselect" (click)="close()">×</span>
+    </button>
+  </header>
+  <main class="border">
+    <h1 class="heading">Email</h1>
+    <input type="email" class="input-field" placeholder="Your email (optional)">
+    <h1 class="heading">Message</h1>
+    <textarea rows="3" class="input-field" placeholder="Leave a message (optional)"></textarea>
+    <h1 class="heading">Attachments</h1>
+    <div class="attachments">
+      <img [src]="doodleImg" alt="doodle.png">
+      <span>doodle.png</span>
+    </div>
+  </main>
+  <footer>
+    <button class="btn-standard">Send doodle</button>
+  </footer>
+</div>

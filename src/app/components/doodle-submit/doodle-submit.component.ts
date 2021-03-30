@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-doodle-submit',
@@ -7,7 +8,75 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoodleSubmitComponent implements OnInit {
 
-  constructor() { }
+  doodleImg: string = '';
+
+  constructor(private dialogRef: MatDialogRef<DoodleSubmitComponent>) { this.getDoodle() }
+
+  getDoodle() {
+    const node = document.querySelector('#draw-frame > svg');
+    if (!node) return;
+    const svgString = this.saveAsSvg(node);
+
+    this.svgString2Image(
+      svgString,
+      Number(node.clientWidth),
+      Number(node.clientHeight),
+      'png',
+      (img) => {
+        this.doodleImg = img;
+      }
+    );
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
+
+  private saveAsSvg(svgNode: Element): string {
+    svgNode.setAttribute('xlink', 'http://www.w3.org/1999/xlink');
+    const serializer = new XMLSerializer();
+    let svgString = serializer.serializeToString(svgNode);
+    svgString = svgString.replace(/(\w+)?:?xlink=/g, 'xmlns:xlink='); // Fix root xlink without namespace
+    svgString = svgString.replace(/NS\d+:href/g, 'xlink:href');
+    return svgString;
+  }
+
+  private svgString2Image(
+    svgString: string,
+    width: number,
+    height: number,
+    format: string,
+    callback: (img: string) => void
+  ) {
+    // set default for format parameter
+    format = format || 'png';
+    // SVG data URL from SVG string
+    const svgData = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
+    // create canvas in memory(not in DOM)
+    const canvas = document.createElement('canvas');
+    // get canvas context for drawing on canvas
+    const context = canvas.getContext('2d');
+    // set canvas size
+    canvas.width = width;
+    canvas.height = height;
+    // create image in memory(not in DOM)
+    const image = new Image();
+    // later when image loads run this
+    image.onload = () => {
+      if (!context) return;
+      // async (happens later)
+      // clear canvas
+      context.clearRect(0, 0, width, height);
+      // draw image with SVG data to canvas
+      context.drawImage(image, 0, 0, width, height);
+      // snapshot canvas as png
+      const pngData = canvas.toDataURL('image/' + format);
+      // pass png data URL to callback
+      callback(pngData);
+    }; // end async
+    // start loading SVG data into in memory image
+    image.src = svgData;
+  }
 
   ngOnInit(): void {
   }
