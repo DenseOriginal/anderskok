@@ -9,10 +9,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-      DoodleControllerComponent,
-      MobileComponent,
-      SkillsComponent,
-      DoodleSubmitComponent
+    DoodleControllerComponent,
+    MobileComponent,
+    SkillsComponent,
+    DoodleSubmitComponent
   ],
   imports: [
     BrowserModule,
@@ -20,9 +20,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDialogModule
   ],
   exports: [
-      DoodleControllerComponent,
-      MobileComponent,
-      SkillsComponent
+    DoodleControllerComponent,
+    MobileComponent,
+    SkillsComponent
   ]
 })
 export class ComponentModule { }
