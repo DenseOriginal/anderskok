@@ -5,6 +5,7 @@ import { MobileComponent } from "./mobile/mobile.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SkillsComponent } from './skills/skills.component';
 import { DoodleSubmitComponent } from './doodle-submit/doodle-submit.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DoodleSubmitComponent } from './doodle-submit/doodle-submit.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   exports: [
       DoodleControllerComponent,

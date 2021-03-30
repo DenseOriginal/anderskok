@@ -114,3 +114,8 @@ body {
     cursor: url("/assets/icons/cursor.svg") 5 5, crosshair !important;
   }
 }
+
+.doodle-submit > .mat-dialog-container {
+  padding: 0;
+  border-radius: 8px;
+}

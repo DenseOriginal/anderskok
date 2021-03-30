@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DoodleSubmitComponent } from '../doodle-submit/doodle-submit.component';
 
 @Component({
   selector: 'doodle-controller',
@@ -11,9 +13,18 @@ export class DoodleControllerComponent implements OnInit {
   @Output() colorChange = new EventEmitter<string>();
   @Output() undo = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  submitDoodle() {
+    const dialogRef = this.dialog.open(DoodleSubmitComponent, {
+      width: '90vw',
+      height: '90vh',
+      maxWidth: '470px',
+      maxHeight: '650px',
+      panelClass: 'doodle-submit'
+    });
+  }
 }
