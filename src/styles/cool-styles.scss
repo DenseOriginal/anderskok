@@ -63,3 +63,20 @@
   transition: 0.1s ease-in-out;
   outline: none;
 }
+
+.input-field {
+  border: 2px solid #dcdcdc;
+  outline: none;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #484848;
+  font-family: var(--default-font);
+  font-size: 16px;
+
+  &::placeholder {
+    color: #dcdcdc;
+  }
+}
