@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -9,8 +10,15 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class DoodleSubmitComponent implements OnInit {
 
   doodleImg: string = '';
+  email = '';
+  message = '';
+  loading = false;
+  responseMessage = '';
 
-  constructor(private dialogRef: MatDialogRef<DoodleSubmitComponent>) { this.getDoodle() }
+  constructor(
+    private dialogRef: MatDialogRef<DoodleSubmitComponent>,
+    private http: HttpClient
+  ) { this.getDoodle() }
 
   getDoodle() {
     const node = document.querySelector('#draw-frame > svg');
@@ -26,6 +34,25 @@ export class DoodleSubmitComponent implements OnInit {
         this.doodleImg = img;
       }
     );
+  }
+
+  submit() {
+    console.log(1);
+
+    const formData = {
+      email: this.email,
+      message: this.message,
+      doodle: this.doodleImg
+    };
+
+    this.loading = true;
+    this.http.post('/', formData, {
+      headers: { "Content-Type": "application/x-www-form-urlencoded" }
+    })
+      .subscribe(
+        () => this.responseMessage = "Thanks for the doodle",
+        () => this.responseMessage = "Something happened"
+      );
   }
 
   close() {

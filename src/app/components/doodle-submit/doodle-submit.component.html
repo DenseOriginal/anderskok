@@ -8,16 +8,28 @@
   </header>
   <main class="border">
     <h1 class="heading">Email</h1>
-    <input type="email" class="input-field" placeholder="Your email (optional)">
+    <input
+      type="email"
+      class="input-field"
+      [(ngModel)]="email"
+      placeholder="Your email (optional)"
+    />
     <h1 class="heading">Message</h1>
-    <textarea rows="3" class="input-field" placeholder="Leave a message (optional)"></textarea>
+    <textarea
+      rows="3"
+      class="input-field"
+      [(ngModel)]="message"
+      placeholder="Leave a message (optional)"
+    ></textarea>
     <h1 class="heading">Attachments</h1>
     <div class="attachments">
-      <img [src]="doodleImg" alt="doodle.png">
+      <img [src]="doodleImg" alt="doodle.png" />
       <span>doodle.png</span>
     </div>
   </main>
   <footer>
-    <button class="btn-standard">Send doodle</button>
+    <button class="btn-standard" [disabled]="loading" (click)="submit()">
+      {{ responseMessage || (loading ? "Loading" : "Send Doodle") }}
+    </button>
   </footer>
 </div>
