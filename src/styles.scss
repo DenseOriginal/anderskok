@@ -25,6 +25,10 @@
   border-radius: 50px;
 }
 
+html {
+  overflow-y: hidden;
+}
+
 // Text stuff
 :root {
   --text-default: #747474;
