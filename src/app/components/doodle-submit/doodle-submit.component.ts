@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -17,7 +16,6 @@ export class DoodleSubmitComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<DoodleSubmitComponent>,
-    private http: HttpClient
   ) { this.getDoodle() }
 
   getDoodle() {
@@ -37,8 +35,6 @@ export class DoodleSubmitComponent implements OnInit {
   }
 
   submit() {
-    console.log(1);
-
     const formData = {
       email: this.email,
       message: this.message,
@@ -46,13 +42,17 @@ export class DoodleSubmitComponent implements OnInit {
     };
 
     this.loading = true;
-    this.http.post('/', formData, {
-      headers: { "Content-Type": "application/x-www-form-urlencoded" }
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode(formData)
+    }).then(() => {
+      this.responseMessage = 'Thanks for the doodle';
+      setTimeout(() => this.dialogRef.close(), 2000)
     })
-      .subscribe(
-        () => this.responseMessage = "Thanks for the doodle",
-        () => this.responseMessage = "Something happened"
-      );
+      .catch(() => this.responseMessage = 'Something happened')
+      .finally(() => this.loading = false);
   }
 
   close() {
@@ -108,4 +108,10 @@ export class DoodleSubmitComponent implements OnInit {
   ngOnInit(): void {
   }
 
+}
+
+function encode(data: any) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
 }
