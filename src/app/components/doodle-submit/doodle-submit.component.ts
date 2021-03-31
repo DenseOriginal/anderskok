@@ -39,12 +39,12 @@ export class DoodleSubmitComponent implements OnInit {
     //// Error check
     // Reset any error that could have happened before
     this.emailError = '';
-    
-    if(!this.email && this.message) this.emailError = 'Email can\'t be empty';
-    if(!/^\S+@\S+\.\S+$/.test(this.email) && this.email) this.emailError = 'Enter a valid email'
+
+    if (!this.email && this.message) this.emailError = 'Email can\'t be empty';
+    if (!/^\S+@\S+\.\S+$/.test(this.email) && this.email) this.emailError = 'Enter a valid email'
 
     // If an error happened exit
-    if(this.emailError) return;
+    if (this.emailError) return;
 
     const formData = {
       email: this.email,
@@ -52,17 +52,11 @@ export class DoodleSubmitComponent implements OnInit {
       doodle: this.doodleImg
     };
 
-    // const formData = new FormData();
-    // formData.append('email', this.email);
-    // formData.append('message', this.message);
-    // formData.append('doodle', dataURLtoFile(this.doodleImg, 'doodle.png'));
-
     this.loading = true;
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      // body: new URLSearchParams(formData as any).toString()
       body: encode({
         "form-name": 'doodle-form',
         ...formData
