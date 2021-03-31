@@ -32,6 +32,12 @@
 </head>
 <body>
   <app-root><p id="loading"></p></app-root>
+  <!-- Allow netlify buildbots to find the form -->
+  <form name="doodle-form" data-netlify="true" hidden>
+    <input type="email" name="email">
+    <input type="text" name="message">
+    <input type="file" name="doodle">
+  </form>
   <script>
     // Display loading text if it takes more than 2 seconds to load
     setTimeout(() => {
