@@ -6,6 +6,9 @@
   margin: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  scrollbar-color: #8a8a8a #ebebeb;
+  scrollbar-width: thin;
 }
 
 *::-webkit-scrollbar {
