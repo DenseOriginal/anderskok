@@ -7,12 +7,13 @@
     </button>
   </header>
   <main class="border">
-    <h1 class="heading">Email</h1>
+    <h1 class="heading">Email <small class="error">{{ emailError }}</small></h1>
     <input
       type="email"
       class="input-field"
+      [class.input-error]="emailError"
       [(ngModel)]="email"
-      placeholder="Your email (optional)"
+      [placeholder]="'Your email ' + (!message ? '(optional)' : '')"
     />
     <h1 class="heading">Message</h1>
     <textarea

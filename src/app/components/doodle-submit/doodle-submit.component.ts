@@ -10,6 +10,7 @@ export class DoodleSubmitComponent implements OnInit {
 
   doodleImg: string = '';
   email = '';
+  emailError = '';
   message = '';
   loading = false;
   responseMessage = '';
@@ -35,6 +36,16 @@ export class DoodleSubmitComponent implements OnInit {
   }
 
   submit() {
+    //// Error check
+    // Reset any error that could have happened before
+    this.emailError = '';
+    
+    if(!this.email && this.message) this.emailError = 'Email can\'t be empty';
+    if(!/^\S+@\S+\.\S+$/.test(this.email) && this.email) this.emailError = 'Enter a valid email'
+
+    // If an error happened exit
+    if(this.emailError) return;
+
     const formData = {
       email: this.email,
       message: this.message,

@@ -43,6 +43,13 @@ header {
   }
 }
 
+main {
+  .error {
+    margin-left: 8px;
+    color: var(--warning);
+  }
+}
+
 .border {
   border-bottom: 2px solid #e5e5e5;
 }
