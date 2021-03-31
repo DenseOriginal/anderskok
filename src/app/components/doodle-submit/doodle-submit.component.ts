@@ -48,7 +48,7 @@ export class DoodleSubmitComponent implements OnInit {
 
     const formData = {
       email: this.email,
-      message: this.message,
+      message: this.message || randomString(16) + "_doodle",
       doodle: this.doodleImg
     };
 
@@ -128,4 +128,13 @@ function encode(data: any) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&")
+}
+
+function randomString(length: number) {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
 }
