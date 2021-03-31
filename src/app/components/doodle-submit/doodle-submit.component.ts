@@ -22,6 +22,10 @@ export class DoodleSubmitComponent implements OnInit {
   getDoodle() {
     const node = document.querySelector('#draw-frame > svg');
     if (!node) return;
+
+    // Firefox needs width and height to be explicitly defined in html
+    node.setAttribute('width', node.clientWidth.toString());
+    node.setAttribute('height', node.clientHeight.toString());
     const svgString = this.saveAsSvg(node);
 
     this.svgString2Image(
