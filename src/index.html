@@ -1,54 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Anderskok</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <title>Anderskok</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-  <!-- Primary Meta Tags -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="title" content="Anders's Website">
-  <meta name="description" content="I love programming and working with computers. I've designed and created websites for friends, and dabbled in several other things here and there.">
+    <!-- Primary Meta Tags -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="title" content="Anders's Website" />
+    <meta
+      name="description"
+      content="I love programming and working with computers. I've designed and created websites for friends, and dabbled in several other things here and there."
+    />
 
-  <!-- Itemprop -->
-  <meta itemprop="description" content="I love programming and working with computers. I've designed and created websites for friends, and dabbled in several other things here and there.">
-  <meta itemprop="name" content="Anders Kok">
+    <!-- Itemprop -->
+    <meta
+      itemprop="description"
+      content="I love programming and working with computers. I've designed and created websites for friends, and dabbled in several other things here and there."
+    />
+    <meta itemprop="name" content="Anders Kok" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://anderskok.netlify.app/">
-  <meta property="og:title" content="Anders's Website">
-  <meta property="og:site_name" content="Anders' Website">
-  <meta property="og:description" content="I love programming and working with computers. I've designed and created websites for friends, and dabbled in several other things here and there.">
-  <meta property="og:image" content="https://anderskok.netlify.com/assets/og_image.png">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://anderskok.netlify.app/" />
+    <meta property="og:title" content="Anders's Website" />
+    <meta property="og:site_name" content="Anders' Website" />
+    <meta
+      property="og:description"
+      content="I love programming and working with computers. I've designed and created websites for friends, and dabbled in several other things here and there."
+    />
+    <meta
+      property="og:image"
+      content="https://anderskok.netlify.com/assets/og_image.png"
+    />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://anderskok.netlify.app/">
-  <meta property="twitter:title" content="Anders's Website">
-  <meta property="twitter:description" content="I love programming and working with computers. I've designed and created websites for friends, and dabbled in several other things here and there.">
-  <meta property="twitter:image" content="https://anderskok.netlify.com/assets/og_image.png">
-</head>
-<body>
-  <app-root><p id="loading"></p></app-root>
-  <!-- Allow netlify buildbots to find the form -->
-  <form name="doodle-form" data-netlify="true" hidden>
-    <input type="email" name="email">
-    <input type="text" name="message">
-    <input type="text" name="doodle">
-  </form>
-  <script>
-    // Display loading text if it takes more than 2 seconds to load
-    setTimeout(() => {
-      try {
-        document.getElementById('loading').innerHTML = "Loading"
-      } catch (e) { }
-    }, 2000);
-  </script>
-</body>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://anderskok.netlify.app/" />
+    <meta property="twitter:title" content="Anders's Website" />
+    <meta
+      property="twitter:description"
+      content="I love programming and working with computers. I've designed and created websites for friends, and dabbled in several other things here and there."
+    />
+    <meta
+      property="twitter:image"
+      content="https://anderskok.netlify.com/assets/og_image.png"
+    />
+  </head>
+  <body>
+    <app-root><p id="loading"></p></app-root>
+    <!-- Allow netlify buildbots to find the form -->
+    <form name="doodle-form" data-netlify="true" hidden>
+      <input type="email" name="email" />
+      <input type="text" name="message" />
+      <input type="text" name="doodle" />
+    </form>
+    <script>
+      // Display loading text if it takes more than 2 seconds to load
+      setTimeout(() => {
+        try {
+          document.getElementById("loading").innerHTML = "Loading";
+        } catch (e) {}
+      }, 2000);
+    </script>
+  </body>
 </html>
