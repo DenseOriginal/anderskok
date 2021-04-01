@@ -7,13 +7,15 @@ import { SkillsComponent } from './skills/skills.component';
 import { DoodleSubmitComponent } from './doodle-submit/doodle-submit.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
     DoodleControllerComponent,
     MobileComponent,
     SkillsComponent,
-    DoodleSubmitComponent
+    DoodleSubmitComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
