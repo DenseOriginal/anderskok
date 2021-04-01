@@ -1,5 +1,5 @@
 .project {
-  border: 2px solid #dcdcdc;
+  border: 2px solid var(--border-color);
   border-radius: 6px;
 
   section {
@@ -11,7 +11,7 @@
   }
 
   .border-top {
-    border-top: 2px solid #dcdcdc;
+    border-top: 2px solid var(--border-color);
   }
 
   .header {
