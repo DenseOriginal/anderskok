@@ -60,30 +60,15 @@
     <app-skills></app-skills>
   </div>
 
-  <div class="item projects">
+  <div class="item projects" *ngIf="projects.length > 0">
     <h1 class="heading" contenteditable="true">My projects</h1>
-    <div class="project">
-      <section class="header">
-        <div class="img-container">
-          <img src="https://simonkomlos.com/img/zogofinance.png" alt="leoh" />
-        </div>
-        <div class="description">
-          <h1 class="heading">Leoh New Tab</h1>
-          <small>
-            A fully customizable new tab extension that won Google’s ‘Best of
-            2015’ chrome award.
-          </small>
-        </div>
-      </section>
-      <section class="facts border-top">
-        <h1 class="heading">Facts</h1>
-        <ul>
-          <li class="small">Grew to 60,000 active users</li>
-          <li class="small">9 million pageviews/month</li>
-          <li class="small">6,000+ reviews (avg 4.85/5)</li>
-        </ul>
-      </section>
-    </div>
+    <app-project
+      *ngFor="let project of projects"
+      [name]="project.name"
+      [imgUrl]="project.imgUrl"
+      [description]="project.description"
+      [facts]="project.facts"
+    ></app-project>
   </div>
 
   <div class="item connect">

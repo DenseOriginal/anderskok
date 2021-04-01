@@ -5,6 +5,13 @@ interface Skill {
   name: string
 }
 
+interface Project {
+  imgUrl: string,
+  name: string,
+  description: string,
+  facts?: string[]
+}
+
 @Component({
   selector: 'app-mobile',
   templateUrl: './mobile.component.html',
@@ -63,6 +70,10 @@ export class MobileComponent implements OnInit {
       name: "MongoDB"
     },
   ];
+
+  projects: Project[] = [
+
+  ]
 
   constructor() { }
 
