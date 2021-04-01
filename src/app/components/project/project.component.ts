@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  @Input() img!: string;
+  @Input() imgUrl!: string;
   @Input() name!: string;
   @Input() description!: string;
   @Input() facts?: string[];
