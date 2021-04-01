@@ -1,0 +1,47 @@
+.project {
+  border: 2px solid #dcdcdc;
+  border-radius: 6px;
+
+  section {
+    padding: 16px 12px;
+
+    .heading {
+      margin-bottom: 4px;
+    }
+  }
+
+  .border-top {
+    border-top: 2px solid #dcdcdc;
+  }
+
+  .header {
+    display: flex;
+    align-items: flex-start;
+
+    .img-container {
+      width: 55px;
+      height: 55px;
+      margin: 0 10px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+
+      img {
+        max-width: 55px;
+        max-height: 55px;
+        border-radius: 4px;
+      }
+    }
+
+    .description {
+      margin: 0 10px;
+      margin-right: 0;
+    }
+  }
+
+  .facts {
+    ul {
+      list-style: none;
+    }
+  }
+}

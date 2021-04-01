@@ -1,1 +1,20 @@
-<p>project works!</p>
+<div class="project">
+  <section class="header">
+    <div class="img-container">
+      <img [src]="img" [alt]="name" />
+    </div>
+    <div class="description">
+      <h1 class="heading">{{ name }}</h1>
+      <small>{{ description }}</small>
+    </div>
+  </section>
+  <section class="facts border-top" *ngIf="(facts?.length || 0) > 0">
+    <h1 class="heading">Facts</h1>
+    <ul>
+      <li *ngFor="let fact of facts" class="small">{{ fact }}</li>
+      <!-- <li class="small">Grew to 60,000 active users</li>
+      <li class="small">9 million pageviews/month</li>
+      <li class="small">6,000+ reviews (avg 4.85/5)</li> -->
+    </ul>
+  </section>
+</div>
