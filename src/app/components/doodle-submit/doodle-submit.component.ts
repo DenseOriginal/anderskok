@@ -54,6 +54,12 @@ export class DoodleSubmitComponent implements OnInit {
     // Only submit the doodle or message if theres any content
     if(!this.email && !this.message && document.querySelector('#draw-frame > svg')?.childElementCount == 0) {
       this.responseMessage = "Please enter a message";
+
+      // Remove the message after 3 second
+      setTimeout(() => {
+        // Only change it if it's still "Please enter a message"
+        if(this.responseMessage == "Please enter a message") this.responseMessage = "";
+      }, 3000);
       return;
     }
 
