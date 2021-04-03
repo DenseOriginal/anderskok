@@ -9,6 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class DoodleSubmitComponent implements OnInit {
 
   doodleImg: string = '';
+  compressedDoodleImg: string = '';
   email = '';
   emailError = '';
   message = '';
@@ -53,7 +54,7 @@ export class DoodleSubmitComponent implements OnInit {
     const formData = {
       email: this.email,
       message: this.message || randomString(16) + "_doodle",
-      doodle: this.doodleImg
+      doodle: this.compressedDoodleImg
     };
 
     this.loading = true;
@@ -97,6 +98,7 @@ export class DoodleSubmitComponent implements OnInit {
     format = format || 'png';
     // SVG data URL from SVG string
     const svgData = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
+    this.compressedDoodleImg = svgData;
     // create canvas in memory(not in DOM)
     const canvas = document.createElement('canvas');
     // get canvas context for drawing on canvas
