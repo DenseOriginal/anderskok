@@ -51,6 +51,12 @@ export class DoodleSubmitComponent implements OnInit {
     // If an error happened exit
     if (this.emailError) return;
 
+    // Only submit the doodle or message if theres any content
+    if(!this.email && !this.message && document.querySelector('#draw-frame > svg')?.childElementCount == 0) {
+      this.responseMessage = "Please enter a message";
+      return;
+    }
+
     const formData = {
       email: this.email,
       message: this.message || randomString(16) + "_doodle",
