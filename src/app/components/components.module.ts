@@ -28,7 +28,8 @@ import { SplashComponent } from './splash/splash.component';
   exports: [
     DoodleControllerComponent,
     MobileComponent,
-    SkillsComponent
+    SkillsComponent,
+    SplashComponent
   ]
 })
 export class ComponentModule { }
