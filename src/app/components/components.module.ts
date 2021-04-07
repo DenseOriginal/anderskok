@@ -8,6 +8,7 @@ import { DoodleSubmitComponent } from './doodle-submit/doodle-submit.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { ProjectComponent } from './project/project.component';
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProjectComponent } from './project/project.component';
     MobileComponent,
     SkillsComponent,
     DoodleSubmitComponent,
-    ProjectComponent
+    ProjectComponent,
+    SplashComponent
   ],
   imports: [
     BrowserModule,
