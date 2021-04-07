@@ -1,0 +1,95 @@
+.splash {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    background-color: #3494ff;
+    opacity: 1;
+  
+    &.animate {
+      animation: splash calc(var(--splash-duration) * 1.3) linear forwards;
+  
+      svg path {
+        animation: path var(--splash-duration) ease-in-out forwards;
+      }
+    }
+  
+    svg {
+      overflow: visible;
+      width: 80%;
+      height: auto;
+    
+      path {
+        opacity: 0;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 3.7px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+    }
+  }
+  
+  
+  
+  #a-streg {
+    stroke-dasharray: 63;
+    stroke-dashoffset: 63;
+    animation-duration: 1s;
+  }
+  
+  #a {
+    stroke-dasharray: 191;
+    stroke-dashoffset: 190;
+  }
+  
+  #nd {
+    stroke-dasharray: 283;
+    stroke-dashoffset: 282;
+  }
+  
+  #er {
+    stroke-dasharray: 153;
+    stroke-dashoffset: 152;
+  }
+  
+  #s {
+    stroke-dasharray: 104;
+    stroke-dashoffset: 103;
+  }
+  
+  #k {
+    stroke-dasharray: 219;
+    stroke-dashoffset: 218;
+  }
+  
+  #ok {
+    stroke-dasharray: 368;
+    stroke-dashoffset: 367;
+  }
+  
+  @keyframes path {
+    from {
+      opacity: 1;
+    }
+  
+    90%,
+    to {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes splash {
+    90% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      display: none;
+    }
+  }
+  
