@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   color: string = "#212121";
   isDrawing = false;
+  displaySplash = true;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
