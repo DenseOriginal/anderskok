@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   color: string = "#212121";
   isDrawing = false;
-  displaySplash = true;
+  displaySplash = false;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -25,10 +25,20 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.isHandset$.subscribe(isHandset => { this.isDrawing = !isHandset });
+    if(getCookie('hasSeenSplash') != 'true') {
+      document.cookie = "hasSeenSplash=true; max-age=" + 60 * 60 * 24 * 30;
+      this.displaySplash = true;
+    } 
   }
 
   undo() {
     this.whiteboardService.undo();
   }
 
+}
+
+function getCookie(name: string) {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match) return match[2];
+  return undefined;
 }
