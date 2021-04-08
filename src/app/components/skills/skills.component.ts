@@ -42,6 +42,10 @@ export class SkillsComponent implements OnInit {
       name: "Vue"
     },
     {
+      imgUrl: "/assets/skills/file_type_flutter.svg",
+      name: "Flutter"
+    },
+    {
       imgUrl: "/assets/skills/github.svg",
       name: "GitHub"
     },
