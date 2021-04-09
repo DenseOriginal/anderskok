@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgWhiteboardModule } from 'ng-whiteboard';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+// import { MatIconModule } from '@angular/material/icon';
 import { ComponentModule } from "./components/components.module";
 import { HomeComponent } from './pages/home/home.component';
 
@@ -23,7 +23,7 @@ import { HomeComponent } from './pages/home/home.component';
     NgWhiteboardModule,
     LayoutModule,
     MatButtonModule,
-    MatIconModule,
+    // MatIconModule,
     ComponentModule,
   ],
   providers: [],
