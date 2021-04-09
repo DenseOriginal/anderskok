@@ -18,32 +18,32 @@
     <div class="right">
       <div class="color-options">
         <div
-          [class.active]="color == '#212121'"
+          [class.active]="color == doodleColor1"
           matTooltipShowDelay="350"
           matTooltip="Change color to #212121"
-          class="color-select black"
-          (click)="colorChange.emit('#212121')"
+          class="color-select color-1"
+          (click)="colorChange.emit(doodleColor1)"
         ></div>
         <div
-          [class.active]="color == '#FF555F'"
+          [class.active]="color == doodleColor2"
           matTooltipShowDelay="350"
           matTooltip="Change color to #FF555F"
-          class="color-select red"
-          (click)="colorChange.emit('#FF555F')"
+          class="color-select color-2"
+          (click)="colorChange.emit(doodleColor2)"
         ></div>
         <div
-          [class.active]="color == '#3494FF'"
+          [class.active]="color == doodleColor3"
           matTooltipShowDelay="350"
           matTooltip="Change color to #3494FF"
-          class="color-select blue"
-          (click)="colorChange.emit('#3494FF')"
+          class="color-select color-3"
+          (click)="colorChange.emit(doodleColor3)"
         ></div>
         <div
-          [class.active]="color == '#FFC93B'"
+          [class.active]="color == doodleColor4"
           matTooltipShowDelay="350"
           matTooltip="Change color to #FFC93B"
-          class="color-select yellow"
-          (click)="colorChange.emit('#FFC93B')"
+          class="color-select color-4"
+          (click)="colorChange.emit(doodleColor4)"
         ></div>
       </div>
     </div>

@@ -50,18 +50,18 @@
   margin-top: 12px;
 }
 
-.black {
-  background: #212121;
+.color-1 {
+  background: var(--doodle-color-1);
 }
 
-.red {
-  background: #ff555f;
+.color-2 {
+  background: var(--doodle-color-2);
 }
 
-.blue {
-  background: #3494ff;
+.color-3 {
+  background: var(--doodle-color-3);
 }
 
-.yellow {
-  background: #ffc93b;
+.color-4 {
+  background: var(--doodle-color-4);
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { tap } from 'rxjs/operators';
 import { DoodleSubmitComponent } from '../doodle-submit/doodle-submit.component';
 
 @Component({
@@ -12,10 +13,21 @@ export class DoodleControllerComponent implements OnInit {
   @Input() color: string = "#212121";
   @Output() colorChange = new EventEmitter<string>();
   @Output() undo = new EventEmitter<boolean>();
+  
+  doodleColor1 = getComputedStyle(document.body).getPropertyValue('--doodle-color-1').trim();
+  doodleColor2 = getComputedStyle(document.body).getPropertyValue('--doodle-color-2').trim();
+  doodleColor3 = getComputedStyle(document.body).getPropertyValue('--doodle-color-3').trim();
+  doodleColor4 = getComputedStyle(document.body).getPropertyValue('--doodle-color-4').trim();
 
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    console.log(this.doodleColor1);
+    console.log(this.doodleColor2);
+    console.log(this.doodleColor3);
+    console.log(this.doodleColor4);
+
+    this.colorChange.subscribe(console.log);
   }
 
   submitDoodle() {
