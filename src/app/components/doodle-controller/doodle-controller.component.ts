@@ -22,12 +22,6 @@ export class DoodleControllerComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    console.log(this.doodleColor1);
-    console.log(this.doodleColor2);
-    console.log(this.doodleColor3);
-    console.log(this.doodleColor4);
-
-    this.colorChange.subscribe(console.log);
   }
 
   submitDoodle() {
