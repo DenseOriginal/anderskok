@@ -72,7 +72,16 @@ export class MobileComponent implements OnInit {
   ];
 
   projects: Project[] = [
-
+    {
+      imgUrl: "/assets/projects/ttt-squared.png",
+      name: 'Tic-Tac-Toe Squared',
+      description: "Play ultimate tic tac toe online with a friend.",
+      facts: [
+        "Cross device playing using WebRTC",
+        "Build using Angular",
+        "100% lighthouse score"
+      ]
+    }
   ]
 
   constructor() { }
