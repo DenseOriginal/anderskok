@@ -11,6 +11,7 @@ export class ProjectComponent implements OnInit {
   @Input() name!: string;
   @Input() description!: string;
   @Input() facts?: string[];
+  @Input() link!: string;
 
   constructor() { }
 

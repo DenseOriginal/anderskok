@@ -9,7 +9,8 @@ interface Project {
   imgUrl: string,
   name: string,
   description: string,
-  facts?: string[]
+  facts?: string[],
+  link: string,
 }
 
 @Component({
@@ -76,6 +77,7 @@ export class MobileComponent implements OnInit {
       imgUrl: "/assets/projects/ttt-squared.png",
       name: 'Tic-Tac-Toe Squared',
       description: "Play ultimate tic tac toe online with a friend.",
+      link: "https://ttt-squared.netlify.app/",
       facts: [
         "Cross device playing using WebRTC",
         "Build using Angular",
