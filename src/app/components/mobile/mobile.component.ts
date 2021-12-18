@@ -74,6 +74,17 @@ export class MobileComponent implements OnInit {
 
   projects: Project[] = [
     {
+      imgUrl: "/assets/projects/aglan.png",
+      name: 'AGLan website',
+      description: "Website for LAN parties at Aarhus Gymansium, used to register for the event.",
+      link: "https://aglan.dk",
+      facts: [
+        "Build using Express JS",
+        "Secure with HTTPS",
+        "Integrated with Discord server"
+      ]
+    },
+    {
       imgUrl: "/assets/projects/ttt-squared.png",
       name: 'Tic-Tac-Toe Squared',
       description: "Play ultimate tic tac toe online with a friend.",
