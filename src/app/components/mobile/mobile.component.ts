@@ -80,7 +80,8 @@ export class MobileComponent implements OnInit {
       link: "https://aglan.dk",
       facts: [
         "Build using Express JS",
-        "Secure with HTTPS",
+        "Hosted 24/7 on Digital Ocean",
+        "Secured with HTTPS",
         "Integrated with Discord server"
       ]
     },
