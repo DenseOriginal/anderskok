@@ -62,14 +62,15 @@
 
   <div class="item projects" *ngIf="projects.length > 0">
     <h1 class="heading" contenteditable="true">My projects</h1>
-    <app-project
-      *ngFor="let project of projects"
-      [name]="project.name"
-      [imgUrl]="project.imgUrl"
-      [description]="project.description"
-      [facts]="project.facts"
-      [link]="project.link"
-    ></app-project>
+    <div class="project" *ngFor="let project of projects">
+      <app-project
+        [name]="project.name"
+        [imgUrl]="project.imgUrl"
+        [description]="project.description"
+        [facts]="project.facts"
+        [link]="project.link"
+      ></app-project>
+    </div>
   </div>
 
   <div class="item connect">

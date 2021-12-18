@@ -11,6 +11,10 @@
   }
 }
 
+.item.projects .project:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
 .frame {
   padding: 12px;
   border: 2px solid var(--border-color);
