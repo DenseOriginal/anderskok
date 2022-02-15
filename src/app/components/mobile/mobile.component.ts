@@ -95,6 +95,17 @@ export class MobileComponent implements OnInit {
         "Build using Angular",
         "100% lighthouse score"
       ]
+    },
+    {
+      imgUrl: "/assets/projects/logic.png",
+      name: 'Computer Basics',
+      description: 'A logic circuit simulator in the browser.',
+      link: 'https://htxprog.netlify.app/computer-basics/public/',
+      facts: [
+        'My exam project for school',
+        'Object Oriented design',
+        'Integrated circuits',
+      ]
     }
   ]
 
