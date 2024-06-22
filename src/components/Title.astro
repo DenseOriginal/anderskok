@@ -1,0 +1,37 @@
+---
+import { Letter } from "./letters/index.tsx";
+
+interface Props {
+	text: string;
+	size?: 4 | 8 | 12 | 16 | 24 | 32 | 48;
+}
+
+const { text, size } = Astro.props;
+const letters = text.toUpperCase().split("");
+
+const getSizeClasses = () => {
+	switch (size) {
+		case 4:
+			return "h-4 gap-x-1";
+		case 8:
+			return "h-8 gap-x-1.5";
+		case 12:
+			return "h-12 gap-x-1.5";
+		case 16:
+			return "h-16 gap-x-1.5";
+		case 24:
+			return "h-24 gap-x-2";
+		case 32:
+			return "h-32 gap-x-2";
+		case 48:
+			return "h-48 gap-x-2";
+		default:
+			return "h-8 gap-x-2";
+	}
+};
+---
+
+<div class={`flex justify-center ${getSizeClasses()}`}>
+	{letters.map((letter) => <Letter letter={letter} />)}
+	<span class="sr-only">{text}</span>
+</div>
