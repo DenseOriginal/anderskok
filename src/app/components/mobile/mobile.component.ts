@@ -77,7 +77,8 @@ export class MobileComponent implements OnInit {
       imgUrl: "/assets/projects/aglan.png",
       name: 'AGLan website',
       description: "Website for LAN parties at Aarhus Gymansium, used to register for the event.",
-      link: "https://aglan.dk",
+      //link: "https://aglan.dk",
+      link: "",
       facts: [
         "Build using Express JS",
         "Hosted 24/7 on Digital Ocean",
