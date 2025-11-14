@@ -1,17 +1,33 @@
 ---
+import LiquidGlass from '$components/LiquidGlass.astro'
 import Title from '$components/Title.astro'
+import Whiteboard from '$components/Whiteboard.astro'
 ---
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
+		<meta charSet="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+
+		<style>
+			body, html {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
 	</head>
-	<body class="bg-blue">
-		<h1>Astro</h1>
-		<Title text='Anders' size={32}>
+	<body>
+		<Whiteboard>
+			<div class="absolute top-16 inset-x-0 flex justify-center pointer-events-none touch-none">
+				<LiquidGlass class="pointer-events-auto touch-auto">
+					<Title text='Anders' size={32} />
+				</LiquidGlass>
+			</div>
+		</Whiteboard>
 	</body>
 </html>

@@ -1,0 +1,22 @@
+<div class="w-[100vw] h-[100vh] relative">
+	<svg id="svg-whiteboard" class="w-full h-full absolute inset-0"></svg>
+	<div id="whiteboard-children" class="relative">
+		<slot />
+	</div>
+</div>
+
+<script>
+import { VanillaWhiteboard } from "src/std/whiteboard";
+
+	// 1. Initialize the whiteboard
+	const whiteboard = new VanillaWhiteboard("#svg-whiteboard", {
+		color: "#ff0000AA",
+		size: 8,
+	});
+</script>
+
+<style>
+	#svg-whiteboard {
+		cursor: url("/cursor.svg") 0 0, crosshair;
+	}
+</style>
