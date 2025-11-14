@@ -5,11 +5,13 @@ const LetterSVG = ({
 	viewBox,
 	className,
 	muted = false,
+	key
 }: {
 	pathData: string[]
 	viewBox: string
 	className?: string
 	muted?: boolean | undefined
+	key?: string
 }) => {
 	const colors = muted
 		? ["#645981"]
@@ -20,6 +22,7 @@ const LetterSVG = ({
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 			className={`h-full ${className}`}
+			key={key}
 		>
 			{pathData.map((pathDatum, i) => (
 				<path d={pathDatum} fill={muted ? colors[0] : colors[i]} />
@@ -29,12 +32,14 @@ const LetterSVG = ({
 }
 
 interface LetterProps {
-	muted?: boolean | undefined
+	muted?: boolean | undefined;
+	key: string;
 }
 
-const A = ({ muted }: LetterProps) => {
+const A = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M1.49006 77.856C-0.173939 82.08 1.87405 86.944 6.09805 88.608C10.3221 90.272 15.1861 88.224 16.8501 84L22.7381 69.408C23.5061 67.488 25.4261 66.336 27.4741 66.336H40.5301C41.8101 66.336 42.5781 65.056 42.0661 63.904L36.9461 51.104C36.5621 50.208 35.6661 49.696 34.7701 49.696H32.5941C31.6981 49.696 31.1861 48.8 31.4421 47.904L33.2341 43.68C33.3621 43.168 33.3621 42.528 33.2341 42.016L26.3221 25.248C25.6821 23.584 23.3781 23.584 22.7381 25.248C23.1221 24.352 2.38606 75.808 1.49006 77.856Z",
@@ -45,9 +50,10 @@ const A = ({ muted }: LetterProps) => {
 	)
 }
 
-const B = ({ muted }: LetterProps) => {
+const B = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M8.192 90.256C3.712 90.256 0 86.544 0 81.936C0 83.856 0 10.256 0 8.71999C0 4.24 3.712 0.399994 8.192 0.399994H13.696C15.232 0.399994 16.512 1.67999 16.512 3.216C16.512 1.55199 16.512 85.392 16.512 87.44C16.512 88.976 15.232 90.256 13.696 90.256H8.192Z",
@@ -58,9 +64,10 @@ const B = ({ muted }: LetterProps) => {
 	)
 }
 
-const C = ({ muted }: LetterProps) => {
+const C = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M38.016 85.032C38.016 86.824 36.352 88.104 34.688 87.72C14.72 83.112 0 65.192 0 43.944C0 22.696 14.72 4.90401 34.688 0.296009C36.352 -0.087994 38.016 1.192 38.016 2.984V14.376C38.016 15.656 37.248 16.68 36.096 17.064C24.704 20.776 16.512 31.4 16.512 43.944C16.512 56.488 24.704 67.24 36.096 70.824C37.248 71.208 38.016 72.36 38.016 73.512V85.032Z",
@@ -72,9 +79,10 @@ const C = ({ muted }: LetterProps) => {
 	)
 }
 
-const D = ({ muted }: LetterProps) => {
+const D = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M16.981 87.44C16.981 88.976 15.701 90.256 14.165 90.256H3.15701C1.62101 90.256 0.469009 88.976 0.469009 87.44V3.216C0.469009 1.67999 1.62101 0.399994 3.15701 0.399994H14.165C15.701 0.399994 16.981 1.67999 16.981 3.216V87.44Z",
@@ -85,9 +93,10 @@ const D = ({ muted }: LetterProps) => {
 	)
 }
 
-const E = ({ muted }: LetterProps) => {
+const E = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M0.911987 81.408C0.911987 86.016 4.62397 89.728 9.10397 89.728H14.608C16.144 89.728 17.424 88.448 17.424 86.912V2.816C17.424 1.28 16.144 0 14.608 0H9.10397C4.62397 0 0.911987 3.84 0.911987 8.32V81.408Z",
@@ -100,9 +109,10 @@ const E = ({ muted }: LetterProps) => {
 	)
 }
 
-const F = ({ muted }: LetterProps) => {
+const F = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M16.512 2.816C16.512 1.28 15.232 0 13.696 0H8.192C3.712 0 0 3.84 0 8.32V81.152C0 85.632 3.328 89.472 7.808 89.728C12.544 89.856 16.512 86.144 16.512 81.408V2.816Z",
@@ -114,9 +124,10 @@ const F = ({ muted }: LetterProps) => {
 	)
 }
 
-const G = ({ muted }: LetterProps) => {
+const G = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M36.992 71.2318C25.216 67.7758 16.512 56.8958 16.512 43.9678C16.512 31.1678 25.216 20.1597 36.992 16.8318C38.144 16.4478 38.912 15.4237 38.912 14.1437V2.75175C38.912 1.08775 37.376 -0.320255 35.584 0.0637477C15.232 4.28775 0 22.3358 0 43.9678C0 65.5997 15.232 83.6478 35.584 87.8718C37.376 88.2558 38.912 86.9758 38.912 85.1838V73.7918C38.912 72.6398 38.144 71.4878 36.992 71.2318Z",
@@ -128,9 +139,10 @@ const G = ({ muted }: LetterProps) => {
 	)
 }
 
-const H = ({ muted }: LetterProps) => {
+const H = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M0 81.408C0 86.016 3.71199 89.728 8.19199 89.728C12.8 89.728 16.512 86.016 16.512 81.408V8.32C16.512 3.84 12.8 0 8.19199 0C3.71199 0 0 3.84 0 8.32V81.408Z",
@@ -141,9 +153,10 @@ const H = ({ muted }: LetterProps) => {
 	)
 }
 
-const I = ({ muted }: LetterProps) => {
+const I = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M8.19199 89.728C3.71199 89.728 0 86.016 0 81.408V8.32C0 3.84 3.71199 0 8.19199 0C12.8 0 16.512 3.84 16.512 8.32V81.408C16.512 86.016 12.8 89.728 8.19199 89.728Z",
@@ -153,9 +166,10 @@ const I = ({ muted }: LetterProps) => {
 	)
 }
 
-const J = ({ muted }: LetterProps) => {
+const J = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M16.5678 73.3172C16.5678 72.5492 16.3118 71.7812 15.6718 71.2692L15.6718 71.2692C15.4158 71.0132 15.0318 70.6292 14.7758 70.2452C12.0878 66.6612 6.83982 65.8932 3.12782 68.7092C-0.584185 71.5252 -0.968214 77.0292 1.84779 80.7412C4.79179 84.3252 8.75982 87.0132 13.1118 88.4212C14.7758 88.9332 16.5678 87.5252 16.5678 85.7332V73.3172Z",
@@ -166,9 +180,10 @@ const J = ({ muted }: LetterProps) => {
 	)
 }
 
-const K = ({ muted }: LetterProps) => {
+const K = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M16.512 81.408V8.32C16.512 3.84 12.8 0 8.19202 0C3.71202 0 0 3.84 0 8.32V81.408C0 86.016 3.71202 89.728 8.19202 89.728C12.8 89.728 16.512 86.016 16.512 81.408Z",
@@ -179,9 +194,10 @@ const K = ({ muted }: LetterProps) => {
 	)
 }
 
-const L = ({ muted }: LetterProps) => {
+const L = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M17.424 86.7965V8.20449C17.424 3.46849 13.456 -0.243509 8.72 0.0124874C4.24 0.140493 0.911987 3.98049 0.911987 8.46049V81.2925C0.911987 85.9005 4.62397 89.6125 9.10397 89.6125H14.608C16.144 89.6125 17.424 88.3325 17.424 86.7965Z",
@@ -192,9 +208,10 @@ const L = ({ muted }: LetterProps) => {
 	)
 }
 
-const M = ({ muted }: LetterProps) => {
+const M = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M73.8887 0.594997C71.5847 1.363 69.9207 3.027 69.0247 5.203L51.1047 49.491C50.5927 50.899 48.6727 50.899 48.0327 49.491C29.3447 3.027 30.1127 4.947 29.7287 4.435C28.8327 2.643 27.2967 1.235 25.2487 0.466999C20.3847 -1.197 15.2647 1.747 14.3687 6.739L0.160665 79.699C-0.735335 84.307 2.20868 88.659 6.68868 89.427C11.1687 90.323 15.5207 87.379 16.4167 82.899L25.2487 37.331C42.9127 81.107 42.0167 78.803 42.2727 79.315C45.6007 85.587 54.6887 85.075 57.2487 78.547L66.7207 55.379L82.9767 9.811C84.8967 4.051 79.5207 -1.581 73.8887 0.594997Z",
@@ -205,9 +222,10 @@ const M = ({ muted }: LetterProps) => {
 	)
 }
 
-const N = ({ muted }: LetterProps) => {
+const N = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M16.384 5.904H16.256L64.384 77.968C67.84 83.088 64.128 90.256 57.984 90C56.576 90 55.04 89.616 53.632 88.72C51.84 87.44 53.248 88.976 19.584 39.952C18.688 38.544 16.512 39.184 16.512 40.848V81.808C16.512 86.544 12.544 90.256 7.80798 90.128C3.32798 89.872 0 86.032 0 81.552V8.848C0 2.83199 5.76 -1.00801 11.008 0.911991C13.952 2.06399 14.976 3.85599 16.384 5.904Z",
@@ -218,9 +236,10 @@ const N = ({ muted }: LetterProps) => {
 	)
 }
 
-const O = ({ muted }: LetterProps) => {
+const O = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M38.121 72.08C25.833 69.008 16.6169 57.872 16.6169 44.688C16.6169 31.376 25.833 20.24 38.121 17.168C39.273 16.912 40.1689 15.76 40.1689 14.608V3.216C40.1689 1.552 38.6329 0.143999 36.9689 0.527994C15.9769 4.24 0.10498 22.672 0.10498 44.688C0.10498 66.704 15.9769 85.008 36.9689 88.848C38.6329 89.104 40.1689 87.824 40.1689 86.032V74.768C40.1689 73.488 39.273 72.464 38.121 72.08Z",
@@ -231,9 +250,10 @@ const O = ({ muted }: LetterProps) => {
 	)
 }
 
-const P = ({ muted }: LetterProps) => {
+const P = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M16.512 81.28V2.816C16.512 1.28 15.232 0 13.696 0H8.19202C3.71202 0 0 3.84 0 8.32V81.024C0 85.504 3.32798 89.344 7.80798 89.6C12.544 89.728 16.512 86.016 16.512 81.28Z",
@@ -244,9 +264,10 @@ const P = ({ muted }: LetterProps) => {
 	)
 }
 
-const Q = ({ muted }: LetterProps) => {
+const Q = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M38.9397 71.6158C26.5237 68.5438 17.1797 57.2798 17.4357 43.7118C17.6917 30.3998 26.9077 19.6478 38.9397 16.7038C40.0917 16.4477 40.9877 15.2957 40.9877 14.0157V2.75175C40.9877 1.08775 39.4517 -0.320249 37.7877 0.0637456C17.1797 3.77575 1.30767 21.4398 0.923667 43.4558C0.411667 66.1118 16.7957 84.6718 37.6597 88.3838C39.4517 88.6397 40.9877 87.3597 40.9877 85.5677V74.3037C40.9877 73.0238 40.0917 71.9998 38.9397 71.6158Z",
@@ -257,9 +278,10 @@ const Q = ({ muted }: LetterProps) => {
 	)
 }
 
-const R = ({ muted }: LetterProps) => {
+const R = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M16.512 81.68V3.21603C16.512 1.68002 15.232 0.400024 13.696 0.400024H8.192C3.712 0.400024 0 4.24003 0 8.72002V81.424C0 85.904 3.328 89.744 7.808 90C12.544 90.128 16.512 86.416 16.512 81.68Z",
@@ -270,9 +292,10 @@ const R = ({ muted }: LetterProps) => {
 	)
 }
 
-const S = ({ muted }: LetterProps) => {
+const S = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M37.7848 87.1083C35.9928 87.6203 34.3288 86.3403 34.3288 84.5483V72.7723C34.3288 71.6203 34.8407 70.7243 35.8647 70.2123C43.1607 66.6283 45.7207 57.1564 34.7127 52.8044C31.6407 51.5244 28.1846 50.7564 24.4726 49.6044C7.4486 44.4844 3.2246 34.3724 2.0726 28.7404C0.280603 19.0124 5.1446 10.0524 10.9046 5.57238C13.8486 3.26838 17.4326 1.47639 21.2726 0.324386C22.9366 -0.187615 24.7287 1.22038 24.7287 3.01238V14.7884C24.7287 15.8124 24.2166 16.8364 23.3206 17.3484C22.5526 17.6044 21.7846 18.1164 21.1446 18.6284C19.4806 20.0364 17.9446 22.9804 18.4566 25.6684C19.0966 28.9964 22.9367 31.8124 29.3367 33.7324C32.7927 34.8844 36.7607 35.7804 40.8568 37.3164C67.6087 48.0684 62.6168 80.3243 37.7848 87.1083Z",
@@ -284,9 +307,10 @@ const S = ({ muted }: LetterProps) => {
 	)
 }
 
-const T = ({ muted }: LetterProps) => {
+const T = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M8.19202 16.64H54.9116C59.5196 16.64 63.2316 12.928 63.2316 8.31999C63.2316 3.84 59.5196 0 54.9116 0H8.19202C3.71202 0 0 3.84 0 8.31999C0 12.928 3.71202 16.64 8.19202 16.64Z",
@@ -297,9 +321,10 @@ const T = ({ muted }: LetterProps) => {
 	)
 }
 
-const U = ({ muted }: LetterProps) => {
+const U = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M30.096 73.9965C30.096 72.8445 29.456 71.9485 28.432 71.4365C22.032 68.8765 17.424 62.6045 17.424 55.3085V8.20449C17.424 3.46849 13.456 -0.243509 8.71999 0.0124874C4.23999 0.140493 0.911987 3.98049 0.911987 8.46049V55.3085C0.911987 71.3085 11.792 84.6205 26.64 88.3325C28.432 88.7165 30.096 87.4365 30.096 85.6445V73.9965Z",
@@ -310,9 +335,10 @@ const U = ({ muted }: LetterProps) => {
 	)
 }
 
-const V = ({ muted }: LetterProps) => {
+const V = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M15.9381 5.18607C41.0261 67.5221 35.6501 54.2101 45.2501 78.7861C46.0181 80.5781 46.0181 82.6261 45.2501 84.4181C43.9701 87.4901 40.898 89.6661 37.57 89.6661C37.57 89.6661 37.186 89.6661 36.674 89.5381C34.114 89.2821 31.682 87.7461 30.402 85.4421C29.89 84.6741 31.6821 89.0261 0.578068 11.3301C-1.08593 7.10607 0.9621 2.24207 5.1861 0.578069C9.4101 -1.08592 14.2741 0.962072 15.9381 5.18607Z",
@@ -323,9 +349,10 @@ const V = ({ muted }: LetterProps) => {
 	)
 }
 
-const W = ({ muted }: LetterProps) => {
+const W = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M67.1655 11.3574L83.8054 57.0534L91.4855 78.8134C92.3815 81.5014 91.9975 84.4454 90.0775 86.7494C89.0535 88.0294 87.5175 88.9254 85.8535 89.4374C84.7015 89.6934 83.8054 89.6934 83.8054 89.6934C80.2214 89.6934 77.1495 87.3894 75.9975 84.1894L60.7655 42.3334C60.2535 40.9254 58.4615 40.9254 57.9495 42.3334C41.6935 87.0054 42.5894 84.9574 41.5654 86.2374C40.1574 88.1574 37.9815 89.4374 35.5495 89.5654C35.1655 89.6934 34.9094 89.6934 34.9094 89.6934C31.3254 89.6934 28.2535 87.3894 27.1015 84.1894L0.477435 11.1014C-1.05856 6.87744 1.2455 2.14144 5.4695 0.477441C9.8215 -1.05855 14.5575 1.24544 16.0935 5.46945L33.5015 53.2134C34.0135 54.4934 35.8055 54.4934 36.3175 53.2134C52.9575 7.26144 51.6775 10.2054 53.2135 8.54144C57.4375 3.93344 64.9895 5.46945 67.1655 11.3574Z",
@@ -336,9 +363,10 @@ const W = ({ muted }: LetterProps) => {
 	)
 }
 
-const X = ({ muted }: LetterProps) => {
+const X = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M68.2693 1.70921C71.3413 3.88521 72.3653 7.85321 71.0853 11.1812L37.0372 56.8772L14.8933 86.3172C12.2053 89.9012 6.95722 90.6692 3.24522 87.8532C-0.338784 85.1652 -1.10679 79.9172 1.70921 76.3332L25.3893 44.7172C26.1573 43.6932 26.1573 42.4132 25.3893 41.3892L4.26926 13.2292C1.45326 9.64521 2.22127 4.39721 5.80527 1.70921C9.51727 -1.10679 14.7652 -0.338791 17.4532 3.24521L34.8613 26.4132C36.0133 27.8212 38.1893 27.8212 39.3413 26.4132L56.6213 3.24521C59.4373 -0.338791 64.6853 -1.10679 68.2693 1.70921Z",
@@ -349,9 +377,10 @@ const X = ({ muted }: LetterProps) => {
 	)
 }
 
-const Y = ({ muted }: LetterProps) => {
+const Y = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M14.8932 3.24521L37.0372 32.6852C37.0372 32.6852 45.3572 40.8772 45.3572 49.3252V81.3252C45.3572 85.9332 41.6452 89.6452 37.0372 89.6452C32.5572 89.6452 28.7173 85.9332 28.7173 81.3252V49.3252L1.70921 13.2292C-1.1068 9.64521 -0.338784 4.39721 3.24522 1.70921C6.95722 -1.10679 12.2052 -0.338791 14.8932 3.24521Z",
@@ -362,9 +391,10 @@ const Y = ({ muted }: LetterProps) => {
 	)
 }
 
-const Z = ({ muted }: LetterProps) => {
+const Z = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M62.926 13.328C31.822 61.2 41.806 45.84 15.31 86.544C13.774 88.72 11.3419 90.128 8.78194 90.128C1.74194 90.128 -1.84202 82.704 1.61398 77.328L40.7819 17.04H40.654L49.102 3.98399C50.51 1.936 52.8139 0.399994 55.8859 0.399994C62.798 0.399994 66.51 7.824 62.926 13.328Z",
@@ -376,9 +406,10 @@ const Z = ({ muted }: LetterProps) => {
 	)
 }
 
-const Apostrophe = ({ muted }: LetterProps) => {
+const Apostrophe = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M24.704 1.408C23.936 4.39467 22.9547 7.63733 21.76 11.136C20.5653 14.5493 19.2853 18.0053 17.92 21.504C16.5547 24.9173 15.1467 28.2027 13.696 31.36H0C0.597333 28.8 1.19469 26.1547 1.79202 23.424C2.38936 20.6933 2.94402 17.9627 3.45602 15.232C4.05336 12.416 4.56534 9.728 4.992 7.168C5.504 4.608 5.93067 2.21867 6.272 0H23.808L24.704 1.408Z",
@@ -388,9 +419,10 @@ const Apostrophe = ({ muted }: LetterProps) => {
 	)
 }
 
-const Comma = ({ muted }: LetterProps) => {
+const Comma = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M24.704 72.408C23.936 75.3947 22.9547 78.6373 21.76 82.136C20.5653 85.5493 19.2853 88.9627 17.92 92.376C16.5547 95.8747 15.1467 99.2027 13.696 102.36H0C0.853333 98.9467 1.66401 95.3627 2.43201 91.608C3.20001 87.9387 3.92534 84.312 4.608 80.728C5.29067 77.144 5.84534 73.9013 6.272 71H23.808L24.704 72.408Z",
@@ -400,9 +432,10 @@ const Comma = ({ muted }: LetterProps) => {
 	)
 }
 
-const Exclamation = ({ muted }: LetterProps) => {
+const Exclamation = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M3.877 61.664H19.109L22.309 0.608002H0.677002L3.877 61.664Z",
@@ -413,9 +446,10 @@ const Exclamation = ({ muted }: LetterProps) => {
 	)
 }
 
-const QuestionMark = ({ muted }: LetterProps) => {
+const QuestionMark = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M17.28 58.056C17.28 55.24 17.664 52.7227 18.432 50.504C19.2 48.2853 20.4374 46.1947 22.144 44.232C23.936 42.2693 26.2827 40.264 29.184 38.216C31.744 36.3387 33.792 34.6747 35.328 33.224C36.9493 31.7733 38.1013 30.3227 38.784 28.872C39.552 27.4213 39.936 25.8 39.936 24.008C39.936 21.2773 38.912 19.2293 36.864 17.864C34.9013 16.4133 32.128 15.688 28.544 15.688C24.96 15.688 21.4187 16.2427 17.92 17.352C14.4214 18.4613 10.8374 19.9547 7.16803 21.832L0.384033 8.136C4.56537 5.832 9.08803 3.95467 13.952 2.50401C18.816 1.05334 24.1494 0.328003 29.952 0.328003C38.8267 0.328003 45.696 2.46134 50.56 6.728C55.5093 10.9947 57.984 16.4133 57.984 22.984C57.984 26.4827 57.4293 29.512 56.32 32.072C55.2107 34.632 53.5467 37.0213 51.328 39.24C49.1093 41.3733 46.336 43.6773 43.008 46.152C40.5333 47.944 38.6134 49.48 37.248 50.76C35.8827 52.04 34.944 53.2773 34.432 54.472C34.0053 55.6667 33.792 57.16 33.792 58.952V62.664H17.28V58.056Z",
@@ -426,9 +460,10 @@ const QuestionMark = ({ muted }: LetterProps) => {
 	)
 }
 
-const LeftParentheses = ({ muted }: LetterProps) => {
+const LeftParentheses = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M0 56.32C0 49.3227 0.639998 42.496 1.92 35.84C3.28533 29.184 5.376 22.8267 8.192 16.768C11.008 10.7093 14.5493 5.12 18.816 0H34.432C30.592 5.29067 27.3493 11.008 24.704 17.152C22.0587 23.296 20.0533 29.6533 18.688 36.224C17.3227 42.7947 16.64 49.4507 16.64 56.192C16.64 62.7627 17.3227 69.3333 18.688 75.904C20.0533 82.3893 22.016 88.6187 24.576 94.592C27.2213 100.651 30.464 106.325 34.304 111.616H18.816C14.5493 106.581 11.008 101.077 8.192 95.104C5.376 89.216 3.28533 82.9867 1.92 76.416C0.639998 69.8453 0 63.1467 0 56.32Z",
@@ -437,9 +472,10 @@ const LeftParentheses = ({ muted }: LetterProps) => {
 		/>
 	)
 }
-const RightParentheses = ({ muted }: LetterProps) => {
+const RightParentheses = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M34.432 56.32C34.432 63.1467 33.7493 69.8453 32.384 76.416C31.104 82.9867 29.056 89.216 26.24 95.104C23.5093 101.077 19.968 106.581 15.616 111.616H0.127991C3.96799 106.325 7.168 100.651 9.728 94.592C12.3733 88.6187 14.3787 82.3893 15.744 75.904C17.1093 69.3333 17.792 62.7627 17.792 56.192C17.792 49.4507 17.1093 42.7947 15.744 36.224C14.3787 29.6533 12.3733 23.296 9.728 17.152C7.168 11.008 3.92533 5.29067 0 0H15.616C19.968 5.12 23.5093 10.7093 26.24 16.768C29.056 22.8267 31.104 29.184 32.384 35.84C33.7493 42.496 34.432 49.3227 34.432 56.32Z",
@@ -448,9 +484,10 @@ const RightParentheses = ({ muted }: LetterProps) => {
 		/>
 	)
 }
-const Period = ({ muted }: LetterProps) => {
+const Period = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M0 79.624C0 75.6987 1.06668 72.968 3.20001 71.432C5.33335 69.8107 7.936 69 11.008 69C13.9947 69 16.5547 69.8107 18.688 71.432C20.8213 72.968 21.888 75.6987 21.888 79.624C21.888 83.3787 20.8213 86.1093 18.688 87.816C16.5547 89.4373 13.9947 90.248 11.008 90.248C7.936 90.248 5.33335 89.4373 3.20001 87.816C1.06668 86.1093 0 83.3787 0 79.624Z",
@@ -460,9 +497,10 @@ const Period = ({ muted }: LetterProps) => {
 	)
 }
 
-const Hyphen = ({ muted }: LetterProps) => {
+const Hyphen = ({ muted, key }: LetterProps) => {
 	return (
 		<LetterSVG
+			key={key}
 			muted={muted}
 			pathData={[
 				"M27.942 45.304C28.198 40.568 24.358 36.6 19.622 36.6H3.23798C1.70198 36.6 0.549988 37.88 0.549988 39.416V50.424C0.549988 51.96 1.70198 53.24 3.23798 53.24H19.366C23.846 53.24 27.686 49.784 27.942 45.304Z",
@@ -472,77 +510,77 @@ const Hyphen = ({ muted }: LetterProps) => {
 	)
 }
 
-export const Letter = ({ letter, muted }: { letter: string; muted?: boolean }) => {
+export const Letter = ({ letter, muted, key }: { letter: string; muted?: boolean, key: string }) => {
 	const letterComponent = letter.toUpperCase()
 	switch (letterComponent) {
 		case "A":
-			return <A muted={muted} />
+			return <A muted={muted} key={key} />
 		case "B":
-			return <B muted={muted} />
+			return <B muted={muted} key={key} />
 		case "C":
-			return <C muted={muted} />
+			return <C muted={muted} key={key} />
 		case "D":
-			return <D muted={muted} />
+			return <D muted={muted} key={key} />
 		case "E":
-			return <E muted={muted} />
+			return <E muted={muted} key={key} />
 		case "F":
-			return <F muted={muted} />
+			return <F muted={muted} key={key} />
 		case "G":
-			return <G muted={muted} />
+			return <G muted={muted} key={key} />
 		case "H":
-			return <H muted={muted} />
+			return <H muted={muted} key={key} />
 		case "I":
-			return <I muted={muted} />
+			return <I muted={muted} key={key} />
 		case "J":
-			return <J muted={muted} />
+			return <J muted={muted} key={key} />
 		case "K":
-			return <K muted={muted} />
+			return <K muted={muted} key={key} />
 		case "L":
-			return <L muted={muted} />
+			return <L muted={muted} key={key} />
 		case "M":
-			return <M muted={muted} />
+			return <M muted={muted} key={key} />
 		case "N":
-			return <N muted={muted} />
+			return <N muted={muted} key={key} />
 		case "O":
-			return <O muted={muted} />
+			return <O muted={muted} key={key} />
 		case "P":
-			return <P muted={muted} />
+			return <P muted={muted} key={key} />
 		case "Q":
-			return <Q muted={muted} />
+			return <Q muted={muted} key={key} />
 		case "R":
-			return <R muted={muted} />
+			return <R muted={muted} key={key} />
 		case "S":
-			return <S muted={muted} />
+			return <S muted={muted} key={key} />
 		case "T":
-			return <T muted={muted} />
+			return <T muted={muted} key={key} />
 		case "U":
-			return <U muted={muted} />
+			return <U muted={muted} key={key} />
 		case "V":
-			return <V muted={muted} />
+			return <V muted={muted} key={key} />
 		case "W":
-			return <W muted={muted} />
+			return <W muted={muted} key={key} />
 		case "X":
-			return <X muted={muted} />
+			return <X muted={muted} key={key} />
 		case "Y":
-			return <Y muted={muted} />
+			return <Y muted={muted} key={key} />
 		case "Z":
-			return <Z muted={muted} />
+			return <Z muted={muted} key={key} />
 		case "'":
-			return <Apostrophe muted={muted} />
+			return <Apostrophe muted={muted} key={key} />
 		case ",":
-			return <Comma muted={muted} />
+			return <Comma muted={muted} key={key} />
 		case "!":
-			return <Exclamation muted={muted} />
+			return <Exclamation muted={muted} key={key} />
 		case "?":
-			return <QuestionMark muted={muted} />
+			return <QuestionMark muted={muted} key={key} />
 		case "(":
-			return <LeftParentheses muted={muted} />
+			return <LeftParentheses muted={muted} key={key} />
 		case ")":
-			return <RightParentheses muted={muted} />
+			return <RightParentheses muted={muted} key={key} />
 		case ".":
-			return <Period muted={muted} />
+			return <Period muted={muted} key={key} />
 		case "-":
-			return <Hyphen muted={muted} />
+			return <Hyphen muted={muted} key={key} />
 		default:
 			return <></>
 	}

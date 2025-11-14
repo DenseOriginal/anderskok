@@ -32,6 +32,6 @@ const getSizeClasses = () => {
 ---
 
 <div class={`flex justify-center ${getSizeClasses()}`}>
-	{letters.map((letter) => <Letter letter={letter} />)}
+	{letters.map((letter, idx) => <Letter letter={letter} key={letter + idx} />)}
 	<span class="sr-only">{text}</span>
 </div>
