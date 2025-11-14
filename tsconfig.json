@@ -4,6 +4,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
 	"baseUrl": "./",
+	"allowImportingTsExtensions": true,
 	"paths": {
 		"$components/*": ["./src/components/*"],
 	}
